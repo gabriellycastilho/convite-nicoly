@@ -1,13 +1,14 @@
 import "./index.css";
-import Header from "./components/Header";
-import ConviteTexto from "./components/ConviteTexto";
-import BotoesAcoes from "./components/BotoesAcoes";
-import Footer from "./components/Footer";
+import "./styles/variables.css";
+import Hero from "./components/Hero/Hero";
+import ConviteTexto from "./components/ConviteTexto/ConviteTexto";
+import BotoesAcoes from "./components/BotoesAcoes/BotoesAcoes";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
     <div className="App">
-      <Header />
+      <Hero />
       <ConviteTexto />
       <BotoesAcoes />
       <Footer />

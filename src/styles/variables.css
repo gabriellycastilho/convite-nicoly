@@ -1,0 +1,19 @@
+:root {
+  /* Tons de roxo Rapunzel */
+  --roxo-claro: #d9c1f5;
+  --roxo-medio: #9565d9;
+  --roxo-escuro: #5a2e8a;
+
+  /* Tons de dourado */
+  --dourado-claro: #fff1c1;
+  --dourado-medio: #e0bb4f;
+  --dourado-escuro: #a67c00;
+
+  /* Outras cores do tema */
+  --rosa-chantilly: #f7d7e3;
+  --verde-folha: #8ccf7e;
+
+  /* Fontes */
+  --fonte-principal: 'Playfair Display', serif;
+  --fonte-secundaria: 'Montserrat', sans-serif;
+}

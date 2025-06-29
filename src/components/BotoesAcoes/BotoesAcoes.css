@@ -1,0 +1,21 @@
+.botoes-acoes {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  padding: 2rem;
+}
+
+.botao {
+  background-color: var(--dourado);
+  color: var(--preto);
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.botao:hover {
+  background-color: var(--dourado-escuro);
+}
