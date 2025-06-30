@@ -8,9 +8,10 @@
   min-height: 100vh;
   padding: 2rem;
   overflow: hidden; /* Se algo passar da área, esconde */
+  z-index: 3;
 }
 
-/* Fundo de imagem cobrindo tudo */
+/* Fundo da imagem */
 .botoes-acoes::before {
   content: "";
   position: absolute;
@@ -22,14 +23,25 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 0.6;
-  z-index: 1; 
+  z-index: 1;
 }
 
-/* Conteúdo por cima do fundo */
+/* Overlay preto */
+.botoes-acoes::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Ajuste a opacidade aqui */
+  z-index: 2;
+}
+
+/* Conteúdo sobre tudo */
 .botoes-acoes > * {
   position: relative;
-  z-index: 2; /* garante que fique acima da imagem */
+  z-index: 3; /* Garante que fique acima da imagem + overlay */
 }
 
 

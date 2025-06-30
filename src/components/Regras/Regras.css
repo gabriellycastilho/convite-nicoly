@@ -1,0 +1,79 @@
+.regras-container {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 2rem;
+  font-family: var(--fonte-secundaria);
+  color: var(--dourado-medio);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  background: none; /* sem background aqui */
+}
+
+/* Card com imagem + overlay preto */
+.regras-card {
+  position: relative; /* pra overlay absoluto */
+  background-image: url("../../assets/images/rapunzelbackgroundregras.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 500px;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  color: var(--dourado-medio);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Overlay preto sem apagar a imagem */
+.regras-card::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* top:0; left:0; right:0; bottom:0 */
+  background: rgba(0, 0, 0, 0.5); /* overlay preto com 50% de transparência */
+  border-radius: 1rem;
+  z-index: 1;
+}
+
+/* Conteúdo fica acima do overlay */
+.regras-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+.regras-container h2 {
+  font-family: var(--fonte-principal);
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: var(--dourado-medio);
+}
+
+.regras-lista {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  text-align: left;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--dourado-medio);
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.regras-lista li::marker {
+  content: "💜";
+  font-size: 1.1rem; /* aumenta o tamanho do emoji */
+  line-height: 1;
+}
+
+.bold-text {
+  font-weight: 700;
+}

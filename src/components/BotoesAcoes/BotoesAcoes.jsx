@@ -1,5 +1,8 @@
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import "./BotoesAcoes.css";
+import BotaoCliqueAqui from "../BotaoCliqueAqui/BotaoCliqueAqui";
+
 
 export default function BotoesAcoes() {
   const [mostrarPix, setMostrarPix] = useState(false);
@@ -16,23 +19,49 @@ export default function BotoesAcoes() {
     window.open("https://goo.gl/maps/exemplo", "_blank");
   };
 
+  const buttons = [
+    {
+      id: "confirmar",
+      text: "CONFIRMAR PRESENÇA",
+      onClick: abrirWhatsapp,
+      className: "btn primario",
+    },
+    {
+      id: "pix",
+      text: "ME PRESENTEIE COM PIX",
+      onClick: () => setMostrarPix(true),
+      className: "btn secundario",
+    },
+    {
+      id: "presentes",
+      text: "DICAS PARA PRESENTE",
+      onClick: () => setMostrarPresentes(true),
+      className: "btn primario",
+    },
+    {
+      id: "maps",
+      text: "SAIBA COMO CHEGAR",
+      onClick: abrirMaps,
+      className: "btn secundario",
+    },
+  ];
+
   return (
     <div className="botoes-acoes">
-       <button className="btn primario" onClick={abrirWhatsapp}>
-    CONFIRMAR PRESENÇA
-  </button>
+      {buttons.map((btn, index) => (
+        <motion.button
+          key={btn.id}
+          className={btn.className}
+          onClick={btn.onClick}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: index * 0.3, duration: 0.6, ease: "easeOut" }}
+        >
+          {btn.text}
+        </motion.button>
+      ))}
 
-  <button className="btn secundario" onClick={() => setMostrarPix(true)}>
-   ME PRESENTEIE COM PIX
-  </button>
-
-  <button className="btn primario" onClick={() => setMostrarPresentes(true)}>
-    DICAS PARA PRESENTE
-  </button>
-
-  <button className="btn secundario" onClick={abrirMaps}>
-    SAIBA COMO CHEGAR
-  </button>
+      <BotaoCliqueAqui targetId="convite-container" />
 
       {mostrarPix && (
         <div className="modal-overlay" onClick={() => setMostrarPix(false)}>
@@ -63,4 +92,5 @@ export default function BotoesAcoes() {
     </div>
   );
 }
+
 
