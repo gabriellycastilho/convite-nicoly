@@ -1,2 +1,125 @@
+.convite-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center; 
+  text-align: center;
+  font-family: var(--fonte-secundaria);
+  color: var(--roxo-escuro);
+}
+
+/* Molduras */
+.Moldura.cima {
+  width: 20rem;
+  height: auto;
+  display: block;
+ margin-bottom: -5.5rem;
+}
+
+.Moldura.baixo {
+  width: 20rem;
+  height: auto;
+  display: block;
+  margin-top: -4.5rem; 
+}
+
+/* Animação Fade + Slide Up */
+.data,
+.local {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: aparecer 1s forwards;
+}
+
+.local {
+  animation-delay: 0.3s;
+}
+
+/* Diminuindo margens para aproximar textos das molduras */
+.data {
+  margin-bottom: 0.2rem;
+  padding-bottom: 0;
+}
+
+.local {
+  margin-top: 0.2rem;
+  padding-top: 0;
+}
+
+@keyframes aparecer {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Títulos */
+.mes,
+.ano {
+  color: var(--dourado-escuro);
+  font-size: 1.5rem;
+}
+
+/* Número da data com brilho */
+.data h1 {
+  font-size: 4rem;
+  margin: 10px 0;
+  position: relative;
+  overflow: hidden;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Dia em destaque com brilho */
+.dia {
+  color: var(--dourado-medio);
+  position: relative;
+  overflow: hidden;
+}
+
+.dia::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  animation: brilho 2s infinite;
+}
+
+@keyframes brilho {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Sábado e hora com cor diferente */
+.sabado,
+.sete-horas {
+  font-size: 1.2rem;
+  color: var(--roxo-escuro);
+}
+
+/* Local */
+.local {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--dourado-medio);
+}
+
+
 
 
