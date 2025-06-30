@@ -1,0 +1,28 @@
+.nome-svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  /* Começa com um drop shadow */
+  filter: drop-shadow(0 0 6px rgb(224, 188, 79));
+  animation: pulsarBrilho 3s ease-in-out infinite;
+}
+
+/* Define o efeito de pulsar */
+@keyframes pulsarBrilho {
+  0% {
+    filter: drop-shadow(0 0 6px rgba(224, 188, 79, 0.671));
+  }
+  50% {
+    filter: drop-shadow(0 0 12px rgba(255, 213, 88, 0.961));
+  }
+  100% {
+    filter: drop-shadow(0 0 6px rgba(224, 187, 79, 0.6));
+  }
+}
+
+
+
+
+
+

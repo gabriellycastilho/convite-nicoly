@@ -1,0 +1,16 @@
+.clique-aqui-texto {
+  display: inline-block;
+  font-family: var(--fonte-principal);;
+  cursor: pointer;
+  font-weight: 100;
+  font-size: 1.5rem;
+  color: var(--dourado-medio);
+  position: relative;
+  transition: color 0.3s;
+}
+
+
+
+
+
+

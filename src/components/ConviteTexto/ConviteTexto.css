@@ -1,4 +1,41 @@
+.convite-texto {
+  position: relative;
+  font-weight: 100;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center; 
+  background-image: url("../../assets/images/flores1.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; 
+  background-color: white;
+  color: var(--roxo-escuro);
+  font-family: var(--fonte-secundaria);
+  text-align: center;
+}
 
+.convite-texto p {
+  padding: 2rem;
+  max-width: auto;
+  font-size: 1.2rem;
+  margin: 0 12rem;
+}
 
+.convite-nome {
+  text-align: center;
+  position: relative;
+}
 
+.convite-nome svg {
+  width: 100%;
+  height: auto;
+}
 
+.flores-decorativas {
+  position: absolute;
+  width: 20%; 
+  height: auto;
+  pointer-events: none; 
+}

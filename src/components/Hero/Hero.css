@@ -1,23 +1,24 @@
 .hero {
   position: relative;
-  width: 100%;
-  height: 100vh; /* altura total da tela */
+  width: 100vw;  /* usar viewport width pra evitar overflow */
+  height: 100vh;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   color: white;
-  padding: 0 2rem;
+  padding: 0; /* tira padding lateral que pode causar scroll */
+  margin: 0;  /* tira margin geral */
 }
 
 .hero-video {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* mantém o vídeo cobrindo tudo, corta se precisar */
+  width: 100%;   /* força vídeo a ocupar 100% da largura */
+  height: 100%;  /* força vídeo a ocupar 100% da altura */
+  object-fit: cover;
   z-index: 0;
 }
 
@@ -34,20 +35,21 @@
   position: relative;
   z-index: 1;
   max-width: 600px;
-  font-family: 'Great Vibes', cursive; /* fonte princesa */
+  font-family: var(--fonte-principal); 
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
 }
 
 .hero-content h1 {
-  font-size: 3.5rem;
+  font-size: 3.8rem;
+  font-weight: 100;
   margin-bottom: 0.5rem;
   color: var(--dourado-claro);
-  font-family: 'Great Vibes', cursive; /* fonte princesa */
+  font-family: var(--fonte-principal); 
   text-shadow:
-    0 0 5px rgba(255, 215, 0, 0.8),    /* brilho dourado suave */
+    0 0 5px rgba(255, 215, 0, 0.8),   
     0 0 10px rgba(255, 215, 0, 0.6),
     0 0 20px rgba(255, 215, 0, 0.4);
-  animation: brilho-texto 3s ease-in-out infinite;
+  animation: brilho-texto 5s ease-in-out infinite;
   user-select: none;
 }
 
