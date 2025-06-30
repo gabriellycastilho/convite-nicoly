@@ -18,27 +18,27 @@ export default function BotoesAcoes() {
 
   return (
     <div className="botoes-acoes">
-      <button className="btn primario" onClick={abrirWhatsapp}>
-        Confirmar Presença
-      </button>
+       <button className="btn primario" onClick={abrirWhatsapp}>
+    CONFIRMAR PRESENÇA
+  </button>
 
-      <button className="btn secundario" onClick={() => setMostrarPix(true)}>
-        Me Presenteie com PIX
-      </button>
+  <button className="btn secundario" onClick={() => setMostrarPix(true)}>
+   ME PRESENTEIE COM PIX
+  </button>
 
-      <button className="btn secundario" onClick={() => setMostrarPresentes(true)}>
-        Para Me Presentear
-      </button>
+  <button className="btn primario" onClick={() => setMostrarPresentes(true)}>
+    DICAS PARA PRESENTE
+  </button>
 
-      <button className="btn primario" onClick={abrirMaps}>
-        Saiba Como Chegar
-      </button>
+  <button className="btn secundario" onClick={abrirMaps}>
+    SAIBA COMO CHEGAR
+  </button>
 
       {mostrarPix && (
         <div className="modal-overlay" onClick={() => setMostrarPix(false)}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <h2>Chave PIX da Nicóly</h2>
-            <p><strong>CPF:</strong> 123.456.789-00</p>
+            <h2>Chave PIX da Nic:</h2>
+            <p><strong>Telefone:</strong> 11 952158379</p>
             <img src="/assets/pix-qrcode.png" alt="QR Code PIX" className="pix-qrcode" />
             <button onClick={() => setMostrarPix(false)}>Fechar</button>
           </div>
