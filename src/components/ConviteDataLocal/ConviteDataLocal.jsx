@@ -1,6 +1,7 @@
 import "./ConviteDataLocal.css";
 import MolduraCima from "../../assets/svg/molduracimadatalocal.svg";
 import MolduraBaixo from "../../assets/svg/moldurabaixodatalocal.svg";
+ import BotaoCliqueAqui from "../BotaoCliqueAqui/BotaoCliqueAqui";
 
 export default function ConviteDataLocal() {
   return (
@@ -18,6 +19,7 @@ export default function ConviteDataLocal() {
       <p className="local">
         Espaço Cristallis: R. Dr. João Carlos Azevedo, Vila Bandeirantes, Mauá - SP
       </p>
+       <BotaoCliqueAqui targetId="convite-container"/>
       <img className="Moldura baixo" src={MolduraBaixo} alt="Moldura baixo" />
     </div>
   );
