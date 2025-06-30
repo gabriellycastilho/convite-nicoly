@@ -11,39 +11,42 @@
   z-index: 3;
 }
 
-/* Fundo da imagem */
+/* Fundo de imagem cobrindo tudo - padrão desktop */
 .botoes-acoes::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   background-image: url("../../assets/images/rapunzelbackground.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  z-index: 1;
+  opacity: 0.6; /* Mantém um pouco de transparência */
+  z-index: 1; 
 }
 
-/* Overlay preto */
+/* Overlay preto sem interferir na imagem */
 .botoes-acoes::after {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4); /* Ajuste a opacidade aqui */
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.4);
   z-index: 2;
 }
 
-/* Conteúdo sobre tudo */
+/* Conteúdo por cima do fundo */
 .botoes-acoes > * {
   position: relative;
-  z-index: 3; /* Garante que fique acima da imagem + overlay */
+  z-index: 3; /* acima do overlay e background */
 }
 
+/* Muda o background para versão mobile abaixo de 768px */
+@media (max-width: 768px) {
+  .botoes-acoes::before {
+    background-image: url("../../assets/images/rapunzelbackgroundregrasmobile.jpg");
+  }
+}
 
 /* Botão base */
 .btn {
@@ -55,16 +58,19 @@
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  min-width: 200px; /* largura mínima para melhor visual */
+  max-width: 100%;  /* para não estourar em telas pequenas */
+  text-align: center;
 }
 
-/* Botão primário: cor roxo/lilás */
+/* Botão primário: cor roxo/lilás usando variável do root */
 .btn.primario {
-  background: var(--roxo-escuro, #6a1b9a);
+  background: var(--roxo-escuro);
   color: #fff;
 }
 
 .btn.primario:hover {
-  background: #8e24aa;
+  background: var(--roxo-claro, #8e24aa);
   transform: translateY(-2px);
 }
 
@@ -113,7 +119,7 @@
 
 /* Botão Fechar no modal */
 .modal-content button {
-  background: var(--roxo-escuro, #6a1b9a);
+  background: var(--roxo-escuro);
   color: #fff;
   border: none;
   border-radius: 1.5rem;
@@ -124,6 +130,17 @@
 }
 
 .modal-content button:hover {
-  background: #8e24aa;
+  background: var(--roxo-claro, #8e24aa);
 }
+
+/* Responsividade - diminui tamanho dos botões em telas menores */
+@media (max-width: 768px) {
+  .btn {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+    min-width: 150px;
+  }
+}
+
+
 

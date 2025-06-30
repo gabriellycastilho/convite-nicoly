@@ -1,6 +1,6 @@
 .hero {
   position: relative;
-  width: 100vw;  /* usar viewport width pra evitar overflow */
+  width: 100vw;
   height: 100vh;
   overflow: hidden;
   display: flex;
@@ -8,18 +8,19 @@
   align-items: center;
   text-align: center;
   color: white;
-  padding: 0; /* tira padding lateral que pode causar scroll */
-  margin: 0;  /* tira margin geral */
+  padding: 0;
+  margin: 0;
 }
 
 .hero-video {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;   /* força vídeo a ocupar 100% da largura */
-  height: 100%;  /* força vídeo a ocupar 100% da altura */
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   z-index: 0;
+  min-height: 100vh;
 }
 
 .hero::before {
@@ -27,7 +28,7 @@
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* overlay preto com 50% de transparência */
+  background: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
 
@@ -35,8 +36,9 @@
   position: relative;
   z-index: 1;
   max-width: 600px;
-  font-family: var(--fonte-principal); 
+  font-family: var(--fonte-principal);
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+  padding: 0 1rem; /* pra dar uma margem lateral já */
 }
 
 .hero-content h1 {
@@ -44,13 +46,14 @@
   font-weight: 100;
   margin-bottom: 0.5rem;
   color: var(--dourado-claro);
-  font-family: var(--fonte-principal); 
+  font-family: var(--fonte-principal);
   text-shadow:
-    0 0 5px rgba(255, 215, 0, 0.8),   
+    0 0 5px rgba(255, 215, 0, 0.8),
     0 0 10px rgba(255, 215, 0, 0.6),
     0 0 20px rgba(255, 215, 0, 0.4);
   animation: brilho-texto 5s ease-in-out infinite;
   user-select: none;
+  line-height: 1.1;
 }
 
 @keyframes brilho-texto {
@@ -83,17 +86,32 @@
   transform: scale(1.05);
 }
 
-
-
-/* Responsividade */
+/* Responsividade geral para tablets e celulares */
 @media (max-width: 768px) {
   .hero-content h1 {
     font-size: 2.2rem;
+    padding: 0 1rem; /* margem lateral para não encostar */
   }
   .hero-content p {
     font-size: 1rem;
   }
 }
+
+/* Ajustes extras para celulares bem pequenos */
+@media (max-width: 480px) {
+  .hero {
+    height: 70vh; /* menos altura no celular para evitar scroll grande */
+  }
+  .hero-content h1 {
+    font-size: 1.6rem;
+    line-height: 1.2;
+  }
+  .hero-content {
+    max-width: 90%;
+    padding: 0 1rem;
+  }
+}
+
 
 
 

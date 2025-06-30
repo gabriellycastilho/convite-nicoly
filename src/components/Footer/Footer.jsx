@@ -1,7 +1,11 @@
+import Rapunzel from "../../assets/images/rapunzelfooter.png";
+import "./Footer.css";
+
 export default function Footer() {
   return (
-    <footer style={{ textAlign: "center", padding: "1rem", backgroundColor: "var(--roxo-medio)", color: "var(--branco)" }}>
-      Feito com amor por Nicoly ✨
+    <footer className="footer">
+      <h1 className="footer-h1">Te vejo lá!</h1>
+       <img className="Rapunzel" src={Rapunzel} alt="Rapunzel" />
     </footer>
   );
 }

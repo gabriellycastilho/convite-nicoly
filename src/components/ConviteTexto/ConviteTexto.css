@@ -14,18 +14,45 @@
   color: var(--roxo-escuro);
   font-family: var(--fonte-secundaria);
   text-align: center;
+  padding: 0 1rem; /* margem lateral pro celular */
+}
+
+.bold-text {
+  font-weight: 700;
 }
 
 .convite-texto p {
-  padding: 2rem;
-  max-width: auto;
+  padding: 2rem 0;
+  max-width: 600px; /* limita largura pra não esticar demais */
   font-size: 1.2rem;
-  margin: 0 12rem;
+  margin: 0 auto; /* centraliza com margem automática */
+}
+
+/* responsividade pra tablets e celulares */
+@media (max-width: 768px) {
+  .convite-texto p {
+    font-size: 1rem;  /* texto menor e confortável pra ler */
+    padding: 1.5rem 0;
+    max-width: 90vw; /* usa quase toda a largura da tela */
+    margin: 0 auto;
+  }
+}
+
+/* celular pequeno */
+@media (max-width: 480px) {
+  .convite-texto p {
+    font-size: 0.9rem;
+    padding: 1rem 0;
+    max-width: 100vw;
+  }
 }
 
 .convite-nome {
   text-align: center;
   position: relative;
+  width: 100%;
+  max-width: 600px; /* limita tamanho do svg pra não estourar */
+  margin-bottom: 2rem;
 }
 
 .convite-nome svg {
@@ -39,3 +66,4 @@
   height: auto;
   pointer-events: none; 
 }
+

@@ -1,12 +1,12 @@
-    import { motion } from "framer-motion";
-    import NomeNicoly from "../NomeNicoly/NomeNicoly";
-    import BotaoCliqueAqui from "../BotaoCliqueAqui/BotaoCliqueAqui";
-    import "./ConviteTexto.css";
+import { motion } from "framer-motion";
+import NomeNicoly from "../NomeNicoly/NomeNicoly";
+import BotaoCliqueAqui from "../BotaoCliqueAqui/BotaoCliqueAqui";
+import "./ConviteTexto.css";
 
 export default function ConviteTexto() {
   return (
     <section className="convite-texto" id="convite-texto">
-              <motion.div
+      <motion.div
         className="convite-nome"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -15,6 +15,7 @@ export default function ConviteTexto() {
       >
         <NomeNicoly />
       </motion.div>
+
       <motion.p
         className="convite-intro"
         initial={{ opacity: 0, y: 20 }}
@@ -22,10 +23,9 @@ export default function ConviteTexto() {
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        
-        Entre castelos, flores e luzes, viveremos uma noite de encanto e eternas memórias.
-Cada detalhe foi preparado com carinho para transformar este sonho em realidade, celebrando os 15 anos de uma princesa que sempre iluminou nossas vidas.
-Venha fazer parte desta história mágica, que ficará guardada para sempre em nossos corações.
+        Entre <span className="bold-text">castelos</span>, <span className="bold-text">flores</span> e <span className="bold-text">luzes</span>, viveremos uma noite de <span className="bold-text">encanto</span> e eternas <span className="bold-text">memórias</span>.
+        Cada detalhe foi preparado com <span className="bold-text">carinho</span> para transformar este sonho em <span className="bold-text">realidade</span>, celebrando os <span className="bold-text">15 anos</span> de uma princesa que sempre iluminou nossas <span className="bold-text">vidas</span>.
+        Venha fazer parte desta <span className="bold-text">história mágica</span>, que ficará guardada para sempre em nossos <span className="bold-text">corações</span>.
       </motion.p>
 
       <motion.p
@@ -35,12 +35,14 @@ Venha fazer parte desta história mágica, que ficará guardada para sempre em n
         transition={{ duration: 0.8, delay: 0.2 }}
         viewport={{ once: true }}
       >
-        Venha celebrar os meus 15 anos, a realizar-se em:
+        Venha celebrar os meus <span className="bold-text">15 anos</span>, a realizar-se em:
       </motion.p>
-      <BotaoCliqueAqui targetId="convite-container"/>
+
+      <BotaoCliqueAqui targetId="convite-container" />
     </section>
   );
 }
+
 
 
 

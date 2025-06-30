@@ -1,0 +1,19 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem; /* espaçamento entre imagem e texto */
+  padding: 1rem 0;
+  font-family: var(--fonte-secundaria);
+  color: var(--roxo-escuro);
+  font-weight: 500;
+}
+
+.footer .Rapunzel {
+  width: 25%; /* tamanho pequeno pra imagem */
+  height: auto;
+  object-fit: contain;
+}
+
+
+
