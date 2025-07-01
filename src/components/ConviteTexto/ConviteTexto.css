@@ -21,32 +21,15 @@
   font-weight: 700;
 }
 
+/* Texto principal */
 .convite-texto p {
   padding: 2rem 0;
-  max-width: 600px; /* limita largura pra não esticar demais */
+  max-width: 600px;
   font-size: 1.2rem;
-  margin: 0 auto; /* centraliza com margem automática */
+  margin: 0 auto;
 }
 
-/* responsividade pra tablets e celulares */
-@media (max-width: 768px) {
-  .convite-texto p {
-    font-size: 1rem;  /* texto menor e confortável pra ler */
-    padding: 1.5rem 0;
-    max-width: 90vw; /* usa quase toda a largura da tela */
-    margin: 0 auto;
-  }
-}
-
-/* celular pequeno */
-@media (max-width: 480px) {
-  .convite-texto p {
-    font-size: 0.9rem;
-    padding: 1rem 0;
-    max-width: 100vw;
-  }
-}
-
+/* Nome Nicoly */
 .convite-nome {
   text-align: center;
   position: relative;
@@ -66,4 +49,36 @@
   height: auto;
   pointer-events: none; 
 }
+
+/* Responsividade tablets e celulares */
+@media (max-width: 768px) {
+  .convite-texto p {
+    font-size: 1rem; /* texto menor para facilitar leitura */
+    padding: 1.5rem 0;
+    max-width: 90vw;
+    margin: 0 auto;
+  }
+  
+  /* Diminui o tamanho do nome Nicoly em telas médias */
+  .convite-nome {
+    max-width: 400px;
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Celulares pequenos (ex: iPhones e Samsungs) */
+@media (max-width: 480px) {
+  .convite-texto p {
+    font-size: 0.85rem; /* texto mais confortável e legível */
+    padding: 1rem 0;
+    max-width: 100vw;
+  }
+  
+  /* Nome ainda menor para não ficar gigante no celular */
+  .convite-nome {
+    max-width: 280px;
+    margin-bottom: 1rem;
+  }
+}
+
 
