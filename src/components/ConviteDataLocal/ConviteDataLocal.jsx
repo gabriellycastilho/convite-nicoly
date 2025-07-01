@@ -1,13 +1,20 @@
 import "./ConviteDataLocal.css";
 import MolduraCima from "../../assets/svg/molduracimadatalocal.svg";
 import MolduraBaixo from "../../assets/svg/moldurabaixodatalocal.svg";
- import BotaoCliqueAqui from "../BotaoCliqueAqui/BotaoCliqueAqui";
+import BotaoCliqueAqui from "../BotaoCliqueAqui/BotaoCliqueAqui";
 
-export default function ConviteDataLocal() {
+import { useRef } from "react";
+import useScrollLockOnView from "../../hooks/useScrollLockOnView";
+
+export default function ConviteDataLocal({ setScrollLocked }) {
+  const sectionRef = useRef();
+
+  useScrollLockOnView(sectionRef, setScrollLocked);
+
   return (
-    <div id="convite-data" className="convite-container">
+    <div ref={sectionRef} id="convite-data" className="convite-container">
       <div className="data">
-         <img className="Moldura cima" src={MolduraCima} alt="Moldura cima" />
+        <img className="Moldura cima" src={MolduraCima} alt="Moldura cima" />
         <p className="mes">NOVEMBRO</p>
         <h1>
           <span className="sabado">SÁB |</span>
@@ -19,10 +26,11 @@ export default function ConviteDataLocal() {
       <p className="local">
         Espaço Cristallis: R. Dr. João Carlos Azevedo, Vila Bandeirantes, Mauá - SP
       </p>
-       <BotaoCliqueAqui targetId="convite-acoes"/>
+      <BotaoCliqueAqui targetId="convite-acoes" setScrollLocked={setScrollLocked} />
       <img className="Moldura baixo" src={MolduraBaixo} alt="Moldura baixo" />
     </div>
   );
 }
+
 
 

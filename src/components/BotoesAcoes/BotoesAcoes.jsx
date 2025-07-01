@@ -2,9 +2,14 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./BotoesAcoes.css";
 import BotaoCliqueAqui from "../BotaoCliqueAqui/BotaoCliqueAqui";
+import { useRef } from "react";
+import useScrollLockOnView from "../../hooks/useScrollLockOnView";
 
+export default function BotoesAcoes({ setScrollLocked }) {
+  const sectionRef = useRef();
 
-export default function BotoesAcoes() {
+   useScrollLockOnView(sectionRef, setScrollLocked);
+
   const [mostrarPix, setMostrarPix] = useState(false);
   const [mostrarPresentes, setMostrarPresentes] = useState(false);
 
@@ -47,7 +52,7 @@ export default function BotoesAcoes() {
   ];
 
   return (
-    <div id="convite-acoes" className="botoes-acoes">
+    <div ref={sectionRef} id="convite-acoes" className="botoes-acoes">
       {buttons.map((btn, index) => (
         <motion.button
           key={btn.id}
@@ -61,7 +66,7 @@ export default function BotoesAcoes() {
         </motion.button>
       ))}
 
-      <BotaoCliqueAqui targetId="convite-regras" />
+      <BotaoCliqueAqui targetId="convite-regras" setScrollLocked={setScrollLocked} />
 
       {mostrarPix && (
         <div className="modal-overlay" onClick={() => setMostrarPix(false)}>

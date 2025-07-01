@@ -2,10 +2,16 @@ import { motion } from "framer-motion";
 import NomeNicoly from "../NomeNicoly/NomeNicoly";
 import BotaoCliqueAqui from "../BotaoCliqueAqui/BotaoCliqueAqui";
 import "./ConviteTexto.css";
+import { useRef } from "react";
+import useScrollLockOnView from "../../hooks/useScrollLockOnView";
 
-export default function ConviteTexto() {
+export default function ConviteTexto({ setScrollLocked }) {
+  const sectionRef = useRef();
+
+  useScrollLockOnView(sectionRef, setScrollLocked);
+
   return (
-    <section className="convite-texto" id="convite-texto">
+    <section ref={sectionRef} className="convite-texto" id="convite-texto">
       <motion.div
         className="convite-nome"
         initial={{ opacity: 0, y: 20 }}
@@ -38,10 +44,11 @@ export default function ConviteTexto() {
         Venha celebrar os meus <span className="bold-text">15 anos</span>, a realizar-se em:
       </motion.p>
 
-      <BotaoCliqueAqui targetId="convite-data" />
+      <BotaoCliqueAqui targetId="convite-data" setScrollLocked={setScrollLocked} />
     </section>
   );
 }
+
 
 
 

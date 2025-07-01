@@ -1,10 +1,16 @@
 import { motion } from "framer-motion";
 import "./Regras.css";
 import BotaoCliqueAqui from "../BotaoCliqueAqui/BotaoCliqueAqui"; 
+import { useRef } from "react";
+import useScrollLockOnView from "../../hooks/useScrollLockOnView";
 
-export default function Regras() {
+export default function Regras({ setScrollLocked }) {
+  const sectionRef = useRef();
+
+   useScrollLockOnView(sectionRef, setScrollLocked);
+
   return (
-    <section id="convite-regras" className="regras-container">
+    <section ref={sectionRef} id="convite-regras" className="regras-container">
       <motion.div
         className="regras-card"
         initial={{ opacity: 0, y: 20 }}
@@ -30,7 +36,7 @@ export default function Regras() {
           <li>A festa começa às <span className="bold-text">19h</span> e termina às <span className="bold-text">00h;</span></li>
           <li>Confirme sua presença até <span className="bold-text">01/10.</span></li>
         </motion.ul>
-         <BotaoCliqueAqui targetId="convite-footer" />
+        <BotaoCliqueAqui targetId="convite-footer" setScrollLocked={setScrollLocked} />
       </motion.div>
     </section>
   );

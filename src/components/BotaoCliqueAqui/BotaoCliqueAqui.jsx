@@ -1,10 +1,12 @@
 import "./BotaoCliqueAqui.css";
 
-
-export default function BotaoCliqueAqui({ targetId }) {
+export default function BotaoCliqueAqui({ targetId, setScrollLocked }) {
   const handleClick = () => {
     const el = document.getElementById(targetId);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+      if (setScrollLocked) setScrollLocked(false);
+    }
   };
 
   return (
@@ -15,6 +17,7 @@ export default function BotaoCliqueAqui({ targetId }) {
     </div>
   );
 }
+
 
 
 
