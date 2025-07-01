@@ -28,6 +28,7 @@
 .data,
 .local {
   opacity: 0;
+  z-index: 3;
   transform: translateY(20px);
   animation: aparecer 1s forwards;
 }

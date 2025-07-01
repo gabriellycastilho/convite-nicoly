@@ -33,6 +33,7 @@
 
 .footer-p {
   position: relative;
+  max-width: 50vw; 
   z-index: 2;
   font-size: 2.5rem;
   font-family: var(--fonte-principal);

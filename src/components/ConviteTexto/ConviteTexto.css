@@ -25,7 +25,7 @@
 .convite-texto p {
   padding: 2rem 0;
   max-width: 600px;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   margin: 0 auto;
 }
 
@@ -39,7 +39,7 @@
 }
 
 .convite-nome svg {
-  width: 100%;
+  width: 50%;
   height: auto;
 }
 
@@ -53,7 +53,7 @@
 /* Responsividade tablets e celulares */
 @media (max-width: 768px) {
   .convite-texto p {
-    font-size: 1rem; /* texto menor para facilitar leitura */
+    font-size: 0.9rem; /* texto menor para facilitar leitura */
     padding: 1.5rem 0;
     max-width: 90vw;
     margin: 0 auto;
@@ -61,7 +61,7 @@
   
   /* Diminui o tamanho do nome Nicoly em telas médias */
   .convite-nome {
-    max-width: 400px;
+    max-width: 50%;
     margin-bottom: 1.5rem;
   }
 }
@@ -76,7 +76,7 @@
   
   /* Nome ainda menor para não ficar gigante no celular */
   .convite-nome {
-    max-width: 280px;
+    max-width: 80%;
     margin-bottom: 1rem;
   }
 }

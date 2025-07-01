@@ -1,12 +1,14 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import "./BotoesAcoes.css";
 import BotaoCliqueAqui from "../BotaoCliqueAqui/BotaoCliqueAqui";
-
 
 export default function BotoesAcoes() {
   const [mostrarPix, setMostrarPix] = useState(false);
   const [mostrarPresentes, setMostrarPresentes] = useState(false);
+
+  const containerRef = useRef(null);
+  const isInView = useInView(containerRef, { once: true, margin: "-100px" });
 
   const abrirWhatsapp = () => {
     window.open(
@@ -46,16 +48,38 @@ export default function BotoesAcoes() {
     },
   ];
 
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.5, // intervalo maior, mais devagar
+      },
+    },
+  };
+
+  const buttonVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { duration: 1, ease: "easeOut" }, // fade bem suave e lento
+    },
+  };
+
   return (
-    <div id="convite-acoes" className="botoes-acoes">
-      {buttons.map((btn, index) => (
+    <motion.div
+      id="convite-acoes"
+      className="botoes-acoes"
+      ref={containerRef}
+      variants={containerVariants}
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
+    >
+      {buttons.map((btn) => (
         <motion.button
           key={btn.id}
           className={btn.className}
           onClick={btn.onClick}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: index * 0.3, duration: 0.6, ease: "easeOut" }}
+          variants={buttonVariants}
         >
           {btn.text}
         </motion.button>
@@ -89,8 +113,10 @@ export default function BotoesAcoes() {
           </div>
         </div>
       )}
-    </div>
+    </motion.div>
   );
 }
+
+
 
 

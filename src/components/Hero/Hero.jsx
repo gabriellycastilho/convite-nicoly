@@ -1,6 +1,7 @@
 import "./Hero.css";
 import luzesVideo from "../../assets/videos/rapunzelvideohero.mp4";
 import BotaoCliqueAqui from "../BotaoCliqueAqui/BotaoCliqueAqui"; 
+import { motion } from "framer-motion";
 
 
 export default function Hero() {
@@ -17,7 +18,14 @@ export default function Hero() {
         Seu navegador não suporta vídeo.
       </video>
       <div className="hero-content">
-        <h1>O Sonho Está Prestes a se Realizar!</h1>
+       <motion.h1
+  initial={{ opacity: 0, scale: 0.8 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 3, ease: "easeOut" }}
+>
+  O Sonho Está Prestes a se Realizar!
+</motion.h1>
+
         <BotaoCliqueAqui targetId="convite-texto" />
       </div>
     </section>
