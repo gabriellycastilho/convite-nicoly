@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
 import "./Regras.css";
+import BotaoCliqueAqui from "../BotaoCliqueAqui/BotaoCliqueAqui"; 
 
 export default function Regras() {
   return (
-    <section className="regras-container">
+    <section id="convite-regras" className="regras-container">
       <motion.div
         className="regras-card"
         initial={{ opacity: 0, y: 20 }}
@@ -29,6 +30,7 @@ export default function Regras() {
           <li>A festa começa às <span className="bold-text">19h</span> e termina às <span className="bold-text">00h;</span></li>
           <li>Confirme sua presença até <span className="bold-text">01/10.</span></li>
         </motion.ul>
+         <BotaoCliqueAqui targetId="convite-footer" />
       </motion.div>
     </section>
   );

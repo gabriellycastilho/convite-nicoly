@@ -38,7 +38,7 @@ export default function ConviteTexto() {
         Venha celebrar os meus <span className="bold-text">15 anos</span>, a realizar-se em:
       </motion.p>
 
-      <BotaoCliqueAqui targetId="convite-container" />
+      <BotaoCliqueAqui targetId="convite-data" />
     </section>
   );
 }

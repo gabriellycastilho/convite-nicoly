@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.0e62e311.css",
+    "main.js": "/static/js/main.679c78d9.js",
+    "static/js/453.3b9b4b2b.chunk.js": "/static/js/453.3b9b4b2b.chunk.js",
+    "static/media/rapunzelvideo.mp4": "/static/media/rapunzelvideo.8354908a7dd3242fd5be.mp4",
+    "static/media/flores1.png": "/static/media/flores1.faa3d4be03c3d83112ed.png",
+    "static/media/molduracimadatalocal.svg": "/static/media/molduracimadatalocal.05bebc2bfae97e6b56ddfdc1c024d161.svg",
+    "static/media/moldurabaixodatalocal.svg": "/static/media/moldurabaixodatalocal.a7724711755325b2f38796df9891adee.svg",
+    "static/media/rapunzelfooter.png": "/static/media/rapunzelfooter.3b09e6b114047e604bfa.png",
+    "static/media/rapunzelbackground.jpg": "/static/media/rapunzelbackground.298397cb4ad8d9f00a9b.jpg",
+    "static/media/rapunzelbackgroundregrasmobile.jpg": "/static/media/rapunzelbackgroundregrasmobile.29eef8e83817d874659f.jpg",
+    "static/media/rapunzelbackgroundregras.jpg": "/static/media/rapunzelbackgroundregras.9698035e94771a3c1af7.jpg",
+    "index.html": "/index.html",
+    "main.0e62e311.css.map": "/static/css/main.0e62e311.css.map",
+    "main.679c78d9.js.map": "/static/js/main.679c78d9.js.map",
+    "453.3b9b4b2b.chunk.js.map": "/static/js/453.3b9b4b2b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0e62e311.css",
+    "static/js/main.679c78d9.js"
+  ]
+}

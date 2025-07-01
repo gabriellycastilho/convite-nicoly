@@ -47,7 +47,7 @@ export default function BotoesAcoes() {
   ];
 
   return (
-    <div className="botoes-acoes">
+    <div id="convite-acoes" className="botoes-acoes">
       {buttons.map((btn, index) => (
         <motion.button
           key={btn.id}
@@ -61,7 +61,7 @@ export default function BotoesAcoes() {
         </motion.button>
       ))}
 
-      <BotaoCliqueAqui targetId="convite-container" />
+      <BotaoCliqueAqui targetId="convite-regras" />
 
       {mostrarPix && (
         <div className="modal-overlay" onClick={() => setMostrarPix(false)}>

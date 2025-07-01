@@ -5,7 +5,7 @@ import MolduraBaixo from "../../assets/svg/moldurabaixodatalocal.svg";
 
 export default function ConviteDataLocal() {
   return (
-    <div className="convite-container">
+    <div id="convite-data" className="convite-container">
       <div className="data">
          <img className="Moldura cima" src={MolduraCima} alt="Moldura cima" />
         <p className="mes">NOVEMBRO</p>
@@ -19,7 +19,7 @@ export default function ConviteDataLocal() {
       <p className="local">
         Espaço Cristallis: R. Dr. João Carlos Azevedo, Vila Bandeirantes, Mauá - SP
       </p>
-       <BotaoCliqueAqui targetId="convite-container"/>
+       <BotaoCliqueAqui targetId="convite-acoes"/>
       <img className="Moldura baixo" src={MolduraBaixo} alt="Moldura baixo" />
     </div>
   );
