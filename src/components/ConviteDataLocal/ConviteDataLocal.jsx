@@ -27,14 +27,11 @@ export default function ConviteDataLocal() {
 
   return (
     <div id="convite-data" className="convite-container">
-      {/* Moldura cima sem animação */}
       <img
         className="Moldura cima"
         src={MolduraCima}
         alt="Moldura cima"
       />
-
-      {/* SOMENTE A DATA ANIMADA */}
       <motion.div
         className="data"
         variants={containerVariants}
@@ -60,18 +57,12 @@ export default function ConviteDataLocal() {
           2025
         </motion.p>
       </motion.div>
-
-      {/* Local SEM ANIMAÇÃO */}
       <p className="local">
         Espaço Cristallis: R. Dr. João Carlos Azevedo, Vila Bandeirantes, Mauá - SP
       </p>
-
-      {/* Botão SEM ANIMAÇÃO */}
       <div>
         <BotaoCliqueAqui targetId="convite-acoes" />
       </div>
-
-      {/* Moldura baixo SEM ANIMAÇÃO */}
       <img
         className="Moldura baixo"
         src={MolduraBaixo}

@@ -9,7 +9,6 @@
   z-index: 3;
 }
 
-/* Fundo de imagem cobrindo tudo - padrão desktop */
 .botoes-acoes::before {
   content: "";
   position: absolute;

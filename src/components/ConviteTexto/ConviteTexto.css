@@ -10,7 +10,6 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover; 
-  background-color: white;
   color: var(--roxo-escuro);
   font-family: var(--fonte-secundaria);
   text-align: center;
@@ -66,7 +65,7 @@
   }
 }
 
-/* Celulares pequenos (ex: iPhones e Samsungs) */
+/* Celulares pequenos */
 @media (max-width: 480px) {
   .convite-texto p {
     font-size: 0.80rem; /* texto mais confortável e legível */

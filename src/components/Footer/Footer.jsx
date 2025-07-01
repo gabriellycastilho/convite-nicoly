@@ -1,11 +1,11 @@
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import { useRef } from "react";
 import rapunzelFooterVideo from "../../assets/videos/rapunzelfootervideo.mov";
+import ContagemRegressiva from "../ContagemRegressiva/ContagemRegressiva";
 import "./Footer.css";
 
 export default function Footer() {
   const footerRef = useRef(null);
-  const isInView = useInView(footerRef, { once: true, margin: "-100px" });
 
   return (
     <footer id="convite-footer" className="footer" ref={footerRef}>
@@ -16,7 +16,7 @@ export default function Footer() {
         muted
         playsInline
         initial={{ opacity: 0 }}
-        animate={isInView ? { opacity: 1 } : {}}
+        animate={{ opacity: 1 }}  // Agora sempre visível
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <source src={rapunzelFooterVideo} type="video/mp4" />
@@ -26,14 +26,15 @@ export default function Footer() {
       <motion.p
         className="footer-p"
         initial={{ opacity: 0, scale: 0.8 }}
-        animate={isInView ? { opacity: 1, scale: 1 } : {}}
+        animate={{ opacity: 1, scale: 1 }}  // Agora sempre visível
         transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
       >
-        Que essa noite seja repleta de sorrisos, memórias inesquecíveis e muita magia no ar.<br/>Te vejo lá!
+         <ContagemRegressiva />
       </motion.p>
     </footer>
   );
 }
+
 
 
 
