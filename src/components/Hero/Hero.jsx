@@ -1,5 +1,5 @@
 import "./Hero.css";
-import luzesVideo from "../../assets/videos/rapunzelvideo.mp4";
+import luzesVideo from "../../assets/videos/rapunzelvideohero.mp4";
 import BotaoCliqueAqui from "../BotaoCliqueAqui/BotaoCliqueAqui"; 
 
 export default function Hero() {
