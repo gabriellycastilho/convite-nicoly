@@ -1,40 +1,47 @@
-import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import "./ConviteDataLocal.css";
 import MolduraCima from "../../assets/svg/molduracimadatalocal.svg";
 import MolduraBaixo from "../../assets/svg/moldurabaixodatalocal.svg";
 import BotaoCliqueAqui from "../BotaoCliqueAqui/BotaoCliqueAqui";
 
 export default function ConviteDataLocal() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.3 } },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.25,
+        when: "beforeChildren",
+      },
+    },
   };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
   };
 
   return (
-    <motion.div
-      ref={ref}
-      id="convite-data"
-      className="convite-container"
-      variants={containerVariants}
-      initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
-    >
-      <motion.div className="data" variants={itemVariants}>
-        <motion.img
-          className="Moldura cima"
-          src={MolduraCima}
-          alt="Moldura cima"
-          variants={itemVariants}
-        />
+    <div id="convite-data" className="convite-container">
+      {/* Moldura cima sem animação */}
+      <img
+        className="Moldura cima"
+        src={MolduraCima}
+        alt="Moldura cima"
+      />
+
+      {/* SOMENTE A DATA ANIMADA */}
+      <motion.div
+        className="data"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+      >
         <motion.p className="mes" variants={itemVariants}>
           NOVEMBRO
         </motion.p>
@@ -53,21 +60,30 @@ export default function ConviteDataLocal() {
           2025
         </motion.p>
       </motion.div>
-      <motion.p className="local" variants={itemVariants}>
+
+      {/* Local SEM ANIMAÇÃO */}
+      <p className="local">
         Espaço Cristallis: R. Dr. João Carlos Azevedo, Vila Bandeirantes, Mauá - SP
-      </motion.p>
-      <motion.div variants={itemVariants}>
+      </p>
+
+      {/* Botão SEM ANIMAÇÃO */}
+      <div>
         <BotaoCliqueAqui targetId="convite-acoes" />
-      </motion.div>
-      <motion.img
+      </div>
+
+      {/* Moldura baixo SEM ANIMAÇÃO */}
+      <img
         className="Moldura baixo"
         src={MolduraBaixo}
         alt="Moldura baixo"
-        variants={itemVariants}
       />
-    </motion.div>
+    </div>
   );
 }
+
+
+
+
 
 
 

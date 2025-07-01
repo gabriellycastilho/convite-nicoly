@@ -1,8 +1,7 @@
 .regras-container {
   width: 100vw;
   height: 100vh;
-  margin: 0;
-  padding: 2rem;
+ 
   font-family: var(--fonte-secundaria);
   color: var(--dourado-medio);
   text-align: center;
@@ -84,6 +83,32 @@
 .bold-text {
   font-weight: 700;
 }
+
+.btn-voltar-topo {
+  position: fixed; /* fixa na tela */
+  bottom: 2rem; /* distância do rodapé */
+  right: 2rem; /* distância da direita */
+  width: 48px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.2); /* fundo transparente suave */
+  border: none; /* sem borda */
+  border-radius: 50%; /* deixa redondo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #ffe77c; /* cor da seta, muda se quiser */
+  transition: background 0.3s ease;
+  backdrop-filter: blur(5px); /* efeito glass suave */
+  -webkit-backdrop-filter: blur(5px);
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.btn-voltar-topo:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
 
 /* Responsividade pra celulares menores, iPhones, Samsungs etc */
 @media (max-width: 768px) {

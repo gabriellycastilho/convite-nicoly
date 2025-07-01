@@ -2,8 +2,8 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center; 
-  align-items: center; 
+  justify-content: center;
+  align-items: center;
   text-align: center;
   font-family: var(--fonte-secundaria);
   color: var(--roxo-escuro);
@@ -14,34 +14,27 @@
   width: 20.9rem;
   height: auto;
   display: block;
- margin-bottom: -10.5rem;
+  margin-bottom: -10.5rem;
 }
 
 .Moldura.baixo {
   width: 20rem;
   height: auto;
   display: block;
-  margin-top: -8.5rem; 
-}
-
-/* Animação Fade + Slide Up */
-.data,
-.local {
-  opacity: 0;
-  z-index: 3;
-  transform: translateY(20px);
-  animation: aparecer 1s forwards;
+  margin-top: -8.5rem;
 }
 
 .local {
-    font-size: 1.1rem;
+  z-index: 100;
+  font-size: 1.1rem;
+  margin-top: 1rem;
   font-weight: 700;
   color: var(--roxo-escuro);
-  animation-delay: 0.3s;
 }
 
 /* Diminuindo margens para aproximar textos das molduras */
 .data {
+  z-index: 100;
   margin-bottom: 0.2rem;
   padding-bottom: 0;
 }
@@ -111,8 +104,47 @@
   color: var(--roxo-escuro);
 }
 
+/* Responsivo para iPhone 14 / Samsung (largura ~375px a 430px) */
+@media (max-width: 430px) {
+  .convite-container {
+    padding: 0 1rem;
+  }
 
+  .Moldura.cima {
+    width: 16rem; /* menor pra caber na tela */
+    margin-bottom: -7rem; /* ajusta espaçamento */
+  }
 
+  .Moldura.baixo {
+    width: 15rem;
+    margin-top: -6rem;
+  }
 
+  .local {
+    font-size: 1rem;
+    margin-top: 0.8rem;
+  }
 
+  .data {
+    margin-bottom: 0.1rem;
+  }
 
+  .mes,
+  .ano {
+    font-size: 1.2rem;
+  }
+
+  .data h1 {
+    font-size: 3rem; /* menor que no desktop */
+    gap: 0.3rem;
+  }
+
+  .sabado,
+  .sete-horas {
+    font-size: 1rem;
+  }
+
+  .dia {
+    font-size: 3rem;
+  }
+}

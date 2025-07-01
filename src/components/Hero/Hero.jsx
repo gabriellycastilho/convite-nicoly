@@ -1,5 +1,5 @@
 import "./Hero.css";
-import luzesVideo from "../../assets/videos/rapunzelvideohero.mp4";
+import luzesVideo from "../../assets/videos/rapunzelfootervideo.mov";
 import BotaoCliqueAqui from "../BotaoCliqueAqui/BotaoCliqueAqui"; 
 import { motion } from "framer-motion";
 

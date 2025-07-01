@@ -1,6 +1,7 @@
+// BotaoCliqueAqui.jsx
 import "./BotaoCliqueAqui.css";
 
-export default function BotaoCliqueAqui({ targetId, setScrollLocked }) {
+export default function BotaoCliqueAqui({ targetId, setScrollLocked, className = "" }) {
   const handleClick = () => {
     const el = document.getElementById(targetId);
     if (el) {
@@ -10,13 +11,17 @@ export default function BotaoCliqueAqui({ targetId, setScrollLocked }) {
   };
 
   return (
-    <div className="clique-aqui-container" onClick={handleClick}>
+    <div
+      className={`clique-aqui-container ${className}`}
+      onClick={handleClick}
+    >
       <span className="clique-aqui-texto">
         clique aqui
       </span>
     </div>
   );
 }
+
 
 
 

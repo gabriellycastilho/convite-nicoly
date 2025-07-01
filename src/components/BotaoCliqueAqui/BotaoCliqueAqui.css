@@ -1,36 +1,51 @@
+.clique-aqui-container {
+  display: inline-block;
+  cursor: pointer;
+  margin: 1rem 0;
+}
+
 .clique-aqui-texto {
   display: inline-block;
   font-family: var(--fonte-principal);
-  cursor: pointer;
-  font-weight: 500; /* deixa mais encorpado */
-  font-size: 1.7rem; /* um pouco maior */
-  color: var(--dourado-escuro); /* dourado mais intenso */
+  font-weight: 500;
+  font-size: 1.7rem;
+  color: var(--dourado-medio);
+  padding: 0.2rem 1.1rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.15);        /* leve translucidez */
+  backdrop-filter: blur(6px);                   /* efeito de vidro fosco */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);     /* sombra delicada */
   position: relative;
-  transition: color 0.3s, transform 0.3s;
-  animation: pulsar 1.5s infinite;
+  transition: 
+    background 0.3s, 
+    transform 0.3s, 
+    box-shadow 0.3s, 
+    color 0.3s;
+  animation: pulsar 2s ease-in-out infinite;     /* pulsar mais suave */
 }
 
-/* Quando passa o mouse, destaca ainda mais */
 .clique-aqui-texto:hover {
-  color: var(--dourado-claro); 
-  transform: scale(1.05);
+  color: var(--dourado-claro);
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.03);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
-/* Animação de pulsar */
 @keyframes pulsar {
   0% {
     transform: scale(1);
-    opacity: 1;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
   50% {
-    transform: scale(1.08);
-    opacity: 0.85;
+    transform: scale(1.04);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
   }
   100% {
     transform: scale(1);
-    opacity: 1;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
 }
+
 
 
 

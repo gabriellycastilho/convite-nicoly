@@ -35,11 +35,9 @@
   position: relative;
   max-width: 50vw; 
   z-index: 2;
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-family: var(--fonte-principal);
   user-select: none;
-  padding: 0 1rem;
-
   /* Texto normal, cor dourado médio */
   color: var(--dourado-medio);
   background: none;
@@ -54,13 +52,13 @@
 /* Responsividade: diminui o tamanho da fonte em telas menores */
 @media (max-width: 768px) {
   .footer-p {
-    font-size: 1.8rem;
+    font-size: 1.9rem;
   }
 }
 
 @media (max-width: 480px) {
   .footer-p {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 }
 
