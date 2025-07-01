@@ -12,7 +12,7 @@
 
 /* Quando passa o mouse, destaca ainda mais */
 .clique-aqui-texto:hover {
-  color: #f4d35e; /* dourado clarinho no hover */
+  color: var(--dourado-claro); 
   transform: scale(1.05);
 }
 

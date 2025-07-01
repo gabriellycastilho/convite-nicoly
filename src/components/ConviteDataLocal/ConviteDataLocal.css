@@ -76,7 +76,6 @@
 .dia {
   color: var(--dourado-medio);
   position: relative;
-  overflow: hidden;
 }
 
 .dia::after {

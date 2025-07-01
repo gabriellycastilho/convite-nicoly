@@ -1,16 +1,11 @@
 import "./Hero.css";
 import luzesVideo from "../../assets/videos/rapunzelvideohero.mp4";
 import BotaoCliqueAqui from "../BotaoCliqueAqui/BotaoCliqueAqui"; 
-import { useRef } from "react";
-import useScrollLockOnView from "../../hooks/useScrollLockOnView";
 
-export default function Hero({ setScrollLocked }) {
-  const sectionRef = useRef();
 
-  useScrollLockOnView(sectionRef, setScrollLocked);
-
+export default function Hero() {
   return (
-    <section className="hero" ref={sectionRef}>
+    <section className="hero">
       <video
         className="hero-video"
         autoPlay
@@ -23,12 +18,11 @@ export default function Hero({ setScrollLocked }) {
       </video>
       <div className="hero-content">
         <h1>O Sonho Está Prestes a se Realizar!</h1>
-        <BotaoCliqueAqui targetId="convite-texto" setScrollLocked={setScrollLocked} />
+        <BotaoCliqueAqui targetId="convite-texto" />
       </div>
     </section>
   );
 }
-
 
 
 

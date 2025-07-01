@@ -15,15 +15,14 @@
 }
 
 .regras-card {
-  position: relative; /* pra overlay absoluto */
+  position: relative;
   background-image: url("../../assets/images/rapunzelbackgroundregras.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  /* muda o min-height pra ocupar tudo da tela */
-  width: 100vw;    /* largura 100% da viewport */
-  height: 100vh;   /* altura 100% da viewport */
-  border-radius: 0; /* tira borda arredondada pra celular ocupar tudo */
+  width: 100vw;
+  height: 100vh;
+  border-radius: 0;
   padding: 2rem;
   box-shadow: 0 6px 15px rgba(0,0,0,0.1);
   color: var(--dourado-medio);
@@ -31,7 +30,13 @@
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  overflow: hidden;
+}
+
+/* Media query pra telas maiores que 1024px, troca a imagem */
+@media (min-width: 1024px) {
+  .regras-card {
+    background-image: url("../../assets/images/rapunzelbackgroundweb.webp");
+  }
 }
 
 /* overlay preto */

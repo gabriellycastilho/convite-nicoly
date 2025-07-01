@@ -1,16 +1,10 @@
 import { motion } from "framer-motion";
 import "./Regras.css";
 import BotaoCliqueAqui from "../BotaoCliqueAqui/BotaoCliqueAqui"; 
-import { useRef } from "react";
-import useScrollLockOnView from "../../hooks/useScrollLockOnView";
 
 export default function Regras({ setScrollLocked }) {
-  const sectionRef = useRef();
-
-   useScrollLockOnView(sectionRef, setScrollLocked);
-
   return (
-    <section ref={sectionRef} id="convite-regras" className="regras-container">
+    <section id="convite-regras" className="regras-container">
       <motion.div
         className="regras-card"
         initial={{ opacity: 0, y: 20 }}
